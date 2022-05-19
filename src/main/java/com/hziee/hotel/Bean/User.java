@@ -1,16 +1,19 @@
 package com.hziee.hotel.Bean;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private int id;
     private String name;
     private String password;
     private String phone;
     private String mail;
 
-    public User(){
+    public User() {
 
     }
-    public User(int id,String name,String password,String phone,String mail) {
+
+    public User(int id, String name, String password, String phone, String mail) {
         this.id = id;
         this.name = name;
         this.password = password;

@@ -1,6 +1,8 @@
 package com.hziee.hotel.Bean;
 
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable {
     private String name;
     private String password;
 
