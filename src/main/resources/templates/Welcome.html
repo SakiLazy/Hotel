@@ -1,20 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>酒店</title>
-    <link rel="stylesheet" href="/css/bar.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/cck.css">
+    <link rel="stylesheet" href="/css/simple.css">
+
+    <title>首页</title>
+    <style>
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        input{
+            outline-style: none ;
+            border: 3px solid #ccc;
+            border-radius: 9px;
+            padding: 10px 10px;
+            width: 200px;
+            font-size: 20px;
+        }
+        input:focus{
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+        }
+    </style>
 </head>
-
 <body>
-
-<div id="bar">
-    <ul>
-        <li>Hotel</li>
-        <li> <a href="">首页</a></li>
-        <li> <a href="">订房</a></li>
-    </ul>
+<div class="toolbar">
+    <div class="menu">
+        <div class="menu_l">
+            <ul>
+                <li>
+                    <a href="#">首页</a>
+                    &nbsp&nbsp
+                    <a href="#">立即订房</a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu_r">
+            <ul>
+                <li>
+                    <a href="/GotoRegisterPage">注册</a>
+                    <a href="/GotoLoginPage">登录</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
+<div class="container">
+    <div class="gallery">
+        <div class="thumbnail">
+            <a href="https://ow.blizzard.cn/home" target="_blank">
+                <img src="/img/focus1.jpg" alt="" width="2000" class="cards"/>
+            </a>
+            <h4>豪华大床房</h4>
+            <p class="tag">￥388</p>
+            <p class="text_column">
+                1张1.8米大床<br>
+                无早餐<br>
+                禁烟<br>
+                停车位<br>
+                有窗<br>
+                30分钟内免费取消
+            </p>
+            <form>
+                <input type="submit" value="立即预定">
+            </form>
+        </div>
+        <div class="thumbnail">
+            <a href="https://www.csgo.com.cn/index.html#2" target="_blank">
+                <img src="/img/focus2.jpg" alt="" width="2000" class="cards"/>
+            </a>
+            <h4>豪华双人床</h4>
+            <p class="tag">￥388</p>
+            <p class="text_column">
+                2张大床<br>
+                无早餐<br>
+                禁烟<br>
+                停车位<br>
+                有窗<br>
+                30分钟内免费取消
+            </p>
+            <form>
+                <input type="submit" value="立即预定">
+            </form>
+        </div>
+        <div class="thumbnail">
+            <a href="https://www.cyberpunk.net/cn/zh-cn/" target="_blank">
+                <img src="/img/focus3.jpg" alt="" width="2000" class="cards"/>
+            </a>
+            <h4>温馨家庭房</h4>
+            <p class="tag">￥388</p>
+            <p class="text_column">
+                1张大床+1张小床<br>
+                三份早餐<br>
+                禁烟<br>
+                停车位<br>
+                有窗<br>
+                30分钟内免费取消
+            </p>
+            <form>
+                <input type="submit" value="立即预定">
+            </form>
+        </div>
+        <div class="thumbnail">
+            <a href="https://store.steampowered.com/app/524220/NieRAutomata/" target="_blank">
+                <img src="/img/focus4.jpg" alt="" width="2000" class="cards"/>
+            </a>
+            <h4>漫步星空套房</h4>
+            <p class="tag">￥688</p>
+            <p class="text_column">
+                1张大床<br>
+                两份早餐<br>
+                禁烟<br>
+                停车位<br>
+                有窗<br>
+                限时取消
+            </p>
+            <form>
+                <input type="submit" value="立即预定">
+            </form>
+        </div>
+
+    </div>
+</div>
+<footer id="contact">
+    <div class="button">点击图标联系我
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
+            <img border="0" src="/img/qq-image.png" alt="点击这里联系我" title="点击这里联系我"/>
+        </a>
+    </div>
+</footer>
+<div class="copyright">&copy;2022 - <strong>Hotel</strong></div>
 </body>
 </html>
+
