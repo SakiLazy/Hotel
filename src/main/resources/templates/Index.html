@@ -20,8 +20,8 @@
       border: 3px solid #ccc;
       border-radius: 9px;
       padding: 10px 10px;
-      width: 200px;
-      font-size: 20px;
+      width: 100px;
+      font-size: 18px;
     }
     input:focus{
       border-color: #66afe9;
@@ -46,8 +46,8 @@
     <div class="menu_r">
       <ul>
         <li>
-          <input type="text" th:value="${user_name}">
-          <a href="#">登出</a>
+          <a th:text="${user_name}" style="letter-spacing: normal">1</a>
+          <a href="/">登出</a>
         </li>
       </ul>
     </div>
