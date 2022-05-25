@@ -1,5 +1,6 @@
 package com.hziee.hotel.Controller;
 
+import com.hziee.hotel.Bean.Admin;
 import com.hziee.hotel.Bean.User;
 import com.hziee.hotel.Mapper.UserMapper;
 import com.hziee.hotel.Service.UserService;
@@ -31,6 +32,23 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/AdminloginIn", method = RequestMethod.POST)
+    public String Adminlogin(String name, String password, Model model) {
+        Admin admin = userService.AdminLogin(name, password);
+        model.addAttribute("user_name", name);
+        if (admin != null) {
+            return "/Admin/AdminIndex";
+        } else {
+            return "error";
+        }
+    }
+
+    @RequestMapping(value = "/GotoAdminLoginPage")
+    public String GotoAdminLoginPage(){
+        return "/AdminLogin";
+    }
+
+
     @RequestMapping(value = "/GotoLoginPage")
     public String GotoLoginPage() {
         return "/Login";
@@ -40,6 +58,7 @@ public class UserController {
     public String GotoRegisterPage() {
         return "/Register";
     }
+
 
     @RequestMapping(value = "/Register", method = RequestMethod.POST)
     public String Register(String name, String password, String phone, String email, Model model) {
@@ -53,7 +72,7 @@ public class UserController {
     public String ManageUser(Model model){
         List<User> users = userMapper.findAll();
         model.addAttribute("alluser",users);
-        return "/ManageUsers";
+        return "/Admin/ManageUsers";
     }
 
 }

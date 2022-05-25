@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>登录</title>
+  <title>管理员登录</title>
   <script src="/script/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="/css/Login.css">
 
@@ -13,9 +13,9 @@
   <div class="login_in pos-tl">
     <div class="wrap">
       <p class="pd-bottom title">
-        <span>登录</span>
+        <span>管理员登录</span>
       </p>
-      <form method="post" action="/loginIn">
+      <form method="post" action="/AdminloginIn">
         <div class="item">
           <span class="ico i-user"></span>
           <input type="text" name="name" placeholder="请输入账号" required="required">
@@ -31,8 +31,7 @@
         </div>
 
         <div class="dl_title">
-          <a href="/GotoRegisterPage" class="dl_if">注册新用户</a>
-          <a href="/GotoAdminLoginPage" class="dl_forget">管理员登录</a>
+          <a href="/GotoLoginPage" class="dl_forget">普通用户登录</a>
         </div>
 
       </form>

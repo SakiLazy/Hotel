@@ -1,6 +1,7 @@
 package com.hziee.hotel.Mapper;
 
 
+import com.hziee.hotel.Bean.Admin;
 import com.hziee.hotel.Bean.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -21,6 +22,8 @@ public interface UserMapper {
                   @Param("phone") String phone,
                   @Param("email") String email);
 
+    @Select("SELECT * FROM adminuser WHERE name = #{name} AND password = #{password}")
+    Admin getAdminInfo(@Param("name") String name, @Param("password") String password);
     @Select("select * from user")
     List<User> findAll();
 }
