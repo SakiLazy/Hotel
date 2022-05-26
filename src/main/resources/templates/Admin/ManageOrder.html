@@ -44,7 +44,7 @@
             <th>入住日期</th>
             <th>离开日期</th>
         </tr>
-        <tr th:each="order:${allorder}">
+        <tr th:each="order:${all_order}">
             <td th:text="${order.id}">1</td>
             <td th:text="${order.user_name}">2</td>
             <td th:text="${order.type}">3</td>

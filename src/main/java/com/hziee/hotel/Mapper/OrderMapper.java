@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import java.util.Date;
 import java.util.List;
 
 @Mapper
@@ -16,9 +15,9 @@ public interface OrderMapper {
     void createOrder(@Param("user_name")String user_name,
                      @Param("type")String type,
                      @Param("price")String price,
-                     @Param("in_date")String in_date,
-                     @Param("out_date")String out_date);
+                     @Param("indate")String in_date,
+                     @Param("outdate")String out_date);
 
-    @Select("select id,user_name,type,price,in_date,out_date FROM order")
+    @Select("select id,username,type,price,indate,outdate FROM order")
     List<Order> findAllOrder();
 }

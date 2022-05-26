@@ -26,8 +26,8 @@ public class OrderController {
 
     @RequestMapping(value = "/GotoManageOrder")
     public String GotoManageOrder(Model model) {
-        List<Order> order = orderMapper.findAllOrder();
-        model.addAttribute("allorder", order);
+        List<Order> orders = orderMapper.findAllOrder();
+        model.addAttribute("all_order", orders);
         return "/Admin/ManageOrder";
     }
 
