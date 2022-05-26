@@ -14,8 +14,7 @@
 
 <form action="/CreateOrder">
     <div style="padding-left:640px ">
-        用户名：<input placeholder="请输入用户名"><br><br>
-        <input type="hidden" name="user_name" th:value="${user_name}">
+        用户名：<input placeholder="请输入用户名" name="user_name"><br><br>
         房 型：<label th:text="${type}"></label><br><br>
         <input type="hidden" name="type" th:value="${type}">
         价 格：<label th:text="${price}"></label><br><br>

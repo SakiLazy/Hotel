@@ -55,6 +55,13 @@ public class OrderController {
         return "redirect:/GotoManageOrder";
     }
 
+    @RequestMapping(value = "/myOrderList")
+    public String myOrderList(@Param("user_name")String user_name,Model model) {
+        List<Order> myOrder = orderMapper.findMyOrder(user_name);
+        model.addAttribute("all_my_order", myOrder);
+        return "/MyOrderList";
+    }
+
     @RequestMapping(value = "/GotoDetails")
     public String GotoDetails(@Param("type")String type,
                               @Param("price")String price,

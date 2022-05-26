@@ -32,4 +32,7 @@ public interface OrderMapper {
                      @Param("in_date")String in_date,
                      @Param("out_date")String out_date,
                      @Param("id")int id);
+
+    @Select("select * from Oorder WHERE user_name=#{user_name}")
+    List<Order> findMyOrder(String user_name);
 }

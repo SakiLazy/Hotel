@@ -19,7 +19,6 @@ public class OrderService {
         orderMapper.deleteOrder(id);
     }
 
-
     public String ShowOrder(String type,String price){
         return orderMapper.showDetails(type,price);
     }
