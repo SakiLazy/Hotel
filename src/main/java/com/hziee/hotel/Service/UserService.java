@@ -22,5 +22,5 @@ public class UserService {
     public Admin AdminLogin(String name,String password) {
         return userMapper.getAdminInfo(name, password);
     }
-    
+
 }
