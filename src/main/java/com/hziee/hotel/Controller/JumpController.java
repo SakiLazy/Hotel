@@ -26,6 +26,6 @@ public class JumpController {
     public String GotoChangePage(){return "/Admin/ChangeUserInfo";}
 
     @RequestMapping(value = "/GotoChangeOrderPage")
-    public String GotoChangeOrderPage(){return "/Admin/ChangeOrderInfo";}
+    public String GotoChangeOrderPage(){return "/Admin/ChangeOrderDetails";}
 
 }

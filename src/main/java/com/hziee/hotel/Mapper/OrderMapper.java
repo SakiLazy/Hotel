@@ -24,4 +24,11 @@ public interface OrderMapper {
 
     @Select("select price from room WHERE type=#{type}")
     String showDetails(@Param("type")String type,@Param("price")String price);
+
+    @Update("UPDATE Oorder SET user_name=#{user_name},type=#{type},price=#{price},in_date=#{in_date},out_date=#{out_date} WHERE id=#{id}")
+    void changeOrder(@Param("user_name")String user_name,
+                     @Param("type")String type,
+                     @Param("price")String price,
+                     @Param("in_date")String in_date,
+                     @Param("out_date")String out_date);
 }
