@@ -52,7 +52,7 @@
             <td th:text="${user.email}">5</td>
             <td>
                 <a href="/GotoChangePage" style="background-color: grey">修改</a>
-                <a href="/DeleteUser" style="background-color: grey" th:name="${user.name}">删除</a>
+                <a href="/DeleteUser" style="background-color: grey" th:name="${user.getName()}">删除</a>
             </td>
         </tr>
     </table>
