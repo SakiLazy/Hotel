@@ -41,12 +41,12 @@
             <th>用户电话</th>
             <th>用户邮箱</th>
         </tr>
-        <tr th:each="Users:${alluser}">
-            <td><b th:text="${Users.getId()}"></b></td>
-            <td><b th:text="${Users.getName()}"></b></td>
-            <td><b th:text="${Users.getPassword()}"></b></td>
-            <td><b th:text="${Users.getPhone()}"></b></td>
-            <td><b th:text="${Users.getEmail()}"></b></td>
+        <tr th:each="user:${alluser}">
+            <td><b th:text="${user.getId()}"></b></td>
+            <td><b th:text="${user.getName()}"></b></td>
+            <td><b th:text="${user.getPassword()}"></b></td>
+            <td><b th:text="${user.getPhone()}"></b></td>
+            <td><b th:text="${user.getEmail()}"></b></td>
         </tr>
     </table>
     <br>
