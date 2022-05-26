@@ -2,6 +2,7 @@ package com.hziee.hotel.Mapper;
 
 import com.hziee.hotel.Bean.Order;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -20,4 +21,7 @@ public interface OrderMapper {
 
     @Delete("delete FROM Oorder WHERE id=#{id}")
     void deleteOrder(int id);
+
+    @Select("select price from room WHERE type=#{type}")
+    String showDetails(@Param("type")String type,@Param("price")String price);
 }

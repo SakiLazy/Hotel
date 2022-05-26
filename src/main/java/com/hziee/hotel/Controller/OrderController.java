@@ -33,14 +33,24 @@ public class OrderController {
         return "redirect:/GotoManageOrder";
     }
 
-    @RequestMapping(value = "/GotoDetails")
-    public String GotoDetails(@Param("user_name")String user_name,
+    @RequestMapping(value = "/CreateOrder")
+    public String CreateOrder(@Param("user_name")String user_name,
                               @Param("type")String type,
                               @Param("price")String price,
                               @Param("in_date")String in_date,
                               @Param("out_date")String out_date,
                               Model model){
-        orderMapper.createOrder(user_name, type, price, in_date, out_date);
-        return "/";
+        orderService.createOrder(user_name, type, price, in_date, out_date);
+        return "/error";
+    }
+
+    @RequestMapping(value = "/GotoDetails")
+    public String GotoDetails(@Param("type")String type,
+                              @Param("price")String price,
+                              Model model){
+        orderService.ShowOrder(type, price);
+        model.addAttribute("type",type);
+        model.addAttribute("price",price);
+        return "/Details";
     }
 }

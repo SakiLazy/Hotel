@@ -18,4 +18,10 @@ public class OrderService {
     public void DeleteOrder(int id){
         orderMapper.deleteOrder(id);
     }
+
+
+    public String ShowOrder(String type,String price){
+        return orderMapper.showDetails(type,price);
+    }
+
 }

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>下单页面</title>
+    <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
 <div style="margin-left:18%;padding:1px 16px;">
     <h3 style="text-align: center">订单信息</h3>
+</div>
     <form>
-        <!--        <form action="/DeleteUser" method="post">-->
-        <!--            <input name="name" id="name" placeholder="输入要删除的用户名">-->
-        <!--            <input type="submit" value="删除">-->
-        <!--        </form>-->
         <tr>
             <th>用户姓名</th>
             <th>房型</th>
@@ -20,20 +18,17 @@
             <th>离店时间</th>
             <th>操作</th>
         </tr>
-        <tr>
-            <td th:text="${user_name}"></td>
-            <td th:text="${type}"></td>
-            <td th:text="${price}"></td>
-            <td name = "in_date" id = "in_date" aria-placeholder="入住时间"></td>
-            <td name = "out_date" id = "out_date" aria-placeholder="离店时间"></td>
-            <td>
-                <form action="/CreateOrder">
-                    <input type="submit" th:value="下单">
-                </form>
-            </td>
-        </tr>
+        <br>
+        <input th:text="${user_name}"/>
+        <input th:text="${type}"/>
+        <input th:text="${price}"/>
+        <input name = "in_date" id = "in_date" placeholder="入住时间">
+        <input name = "out_date" id = "out_date" placeholder="离店时间">
+        <td>
+            <form action="/CreateOrder">
+                <input type="submit" th:value="下单">
+            </form>
+        </td>
     </form>
-    <br>
-</div>
 </body>
 </html>
