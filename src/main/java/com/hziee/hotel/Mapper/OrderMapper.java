@@ -1,10 +1,7 @@
 package com.hziee.hotel.Mapper;
 
 import com.hziee.hotel.Bean.Order;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -20,4 +17,7 @@ public interface OrderMapper {
 
     @Select("select * from Oorder")
     List<Order> findAllOrder();
+
+    @Delete("delete FROM Oorder WHERE id=#{id}")
+    void deleteOrder(int id);
 }

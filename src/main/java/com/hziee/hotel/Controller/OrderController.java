@@ -3,6 +3,7 @@ package com.hziee.hotel.Controller;
 import com.hziee.hotel.Bean.Order;
 import com.hziee.hotel.Mapper.OrderMapper;
 import com.hziee.hotel.Service.OrderService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +29,12 @@ public class OrderController {
         List<Order> orders = orderMapper.findAllOrder();
         model.addAttribute("all_order", orders);
         return "/Admin/ManageOrder";
+    }
+
+    @RequestMapping(value = "/DeleteOrder")
+    public String DeleteOrder(@Param("id")int id){
+        orderMapper.deleteOrder(id);
+        return "redirect:/GotoManageOrder";
     }
 
 }

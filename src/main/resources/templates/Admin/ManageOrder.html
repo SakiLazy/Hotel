@@ -36,6 +36,10 @@
 <div style="margin-left:18%;padding:1px 16px;">
     <h3 style="text-align: center">订单信息</h3>
     <table>
+        <form action="/DeleteOrder" method="post">
+            <input name="id" id="id" placeholder="输入要删除的订单号">
+            <input type="submit" value="删除">
+        </form>
         <tr>
             <th>订单ID</th>
             <th>用户名</th>
@@ -51,11 +55,11 @@
             <td th:text="${order.price}">4</td>
             <td th:text="${order.in_date}">5</td>
             <td th:text="${order.out_date}">6</td>
-<!--            <td>-->
-<!--                <form action="/GotoChangePage">-->
-<!--                    <input type="submit" th:value="修改">-->
-<!--                </form>-->
-<!--            </td>-->
+            <td>
+                <form action="/GotoChangeOrderDetailsPage">
+                    <input type="submit" th:value="修改">
+                </form>
+            </td>
         </tr>
     </table>
     <br>
