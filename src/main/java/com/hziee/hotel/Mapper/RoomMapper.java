@@ -1,11 +1,8 @@
 package com.hziee.hotel.Mapper;
 
 import com.hziee.hotel.Bean.Room;
-import com.hziee.hotel.Bean.Room2;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+
+import org.apache.ibatis.annotations.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -17,27 +14,44 @@ public interface RoomMapper {
     List<Room> findAllRoom();
 
     //增加新房间
-    @Update("insert into room2(id, type, price) VALUES (#{id},#{type},#{price})")
+    @Update("insert into room(id, type, price) VALUES (#{id},#{type},#{price})")
     @Transactional
-    void save(Room2 room2);
+    void createRoom(@Param("id")int id,
+                    @Param("type")String type,
+                    @Param("price")String price);
 
     //删除房间
-    @Delete("delete from room2 where id = #{id}")
+    @Delete("delete from room where id = #{id}")
+    @Transactional
     void deleteById(int id);
 
     //按房间号查询房间
-    @Select("select * ")
+    @Select("select * from room where id = #{id}")
+    @Transactional
     void selectById();
 
-    //预定房间(修改房间状态为已预订
-    @Update("update room2 set status = 1 where id = #{id}")
+    //修改房间信息
+    @Update("insert into room (id, type, price, status) values (#{id},#{type},#{price},#{status});")
     @Transactional
-    void updateById(Room2 room2);
+    void changeRoomById(@Param("id")int id,
+                        @Param("type")String type,
+                        @Param("price")String price,
+                        @Param("status")int status);
+
+    //查询房间状态
+    @Select("select status from room where id = #{id}")
+    @Transactional
+    int getStatus(@Param("id")int id);
+
+    //预定房间(修改房间状态为已预订
+    @Update("update room set status = 1 where id = #{id}")
+    @Transactional
+    void roomDown(@Param("id")int id);
 
     //退房间(修改房间状态为未预定
-    @Update("update room2 set status = 0 where id = #{id}")
+    @Update("update room set status = 0 where id = #{id}")
     @Transactional
-    void updateById2(Room2 room2);
+    void roomUpdate(@Param("id")int id);
 
 
 
