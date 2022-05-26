@@ -2,8 +2,9 @@
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>导航栏</title>
+    <title>后台管理系统</title>
     <script src="/script/jquery-3.6.0.min.js"></script>
+    <script src="/script/base.js"></script>
     <link href="/css/adminUI.css" rel="stylesheet" />
     <style>
         input{
@@ -12,7 +13,7 @@
             border-radius: 9px;
             padding: 10px 10px;
             width: 100px;
-            font-size: 18px;
+            font-size: 22px;
         }
         input:focus{
             border-color: #66afe9;
@@ -25,30 +26,31 @@
 <body>
 
 <div class="top">
-    <div style="float: right;font-size: 25px;">
+    <div style="float: right;font-size: 30px;padding-top: 15px">
         <a href="/GotoAdminLoginPage">登出</a>
     </div>
 </div>
 <ul>
-    <li id="click_1"><a href="#">订单管理</a></li>
+    <li id="click_1"><a href="/ManageOrder">订单管理</a></li>
     <div class="funBackgroungColor">
-        <li id="fun1" class="hidden"><a href="/addBookPage">录入新书</a></li>
-        <li id="fun2" class="hidden"><a href="/addCategoryPage?pageNum=1">新建类别</a></li>
-        <li id="fun2" class="hidden"><a href="/showBooksPage">查询书籍</a></li>
+        <!--        <li id="fun1" class="hidden"><a href="/addBookPage">新建订单</a></li>-->
+        <!--        <li id="fun2" class="hidden"><a href="/addCategoryPage">新建类别</a></li>-->
+        <!--        <li id="fun2" class="hidden"><a href="/showBooksPage">查询书籍</a></li>-->
     </div>
-    <li id="click_2"><a href="#">用户管理</a></li>
+    <li id="click_2"><a href="/ManageUsers">用户管理</a></li>
     <div class="funBackgroungColor">
-        <li id="fun3" class="hidden"><a href="/showUsersPage?pageNum=1">查询用户</a></li>
-        <li id="fun4" class="hidden"><a href="/addUserPage">新增用户</a></li>
+        <!--        <li id="fun3" class="hidden"><a href="/showUsersPage">查询用户</a></li>-->
+        <!--        <li id="fun4" class="hidden"><a href="/addUserPage">新增用户</a></li>-->
     </div>
-    <li id="click_3"><a href="#">借阅信息</a></li>
-    <div class="funBackgroungColor">
-        <li id="fun5" class="hidden"><a href="/allBorrowBooksRecordPage?pageNum=1">所有记录</a></li>
-    </div>
+    <!--    <li id="click_3"><a href="#">订单信息</a></li>-->
+    <!--    <div class="funBackgroungColor">-->
+    <!--        <li id="fun5" class="hidden"><a href="/allBorrowBooksRecordPage?pageNum=1">所有记录</a></li>-->
+    <!--    </div>-->
 </ul>
 
 <div style="margin-left:18%;padding:1px 16px;">
-    <h2>欢迎使用图书管理系统</h2>
+    <h1 th:text="${user_name}">1</h1>
+    <h2>欢迎使用酒店管理系统</h2>
 
 </div>
 </body>

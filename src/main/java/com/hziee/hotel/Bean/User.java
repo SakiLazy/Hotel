@@ -10,12 +10,12 @@ public class User implements Serializable {
     private String name;
     private String password;
     private String phone;
-    private String mail;
+    private String email;
 
     public User() {
 
     }
-
+    
 //    public User(int id, String name, String password, String phone, String mail) {
 //        this.id = id;
 //        this.name = name;
@@ -74,4 +74,5 @@ public class User implements Serializable {
 //                ", mail='" + mail + '\'' +
 //                '}';
 //    }
+
 }
