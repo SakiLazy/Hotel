@@ -20,10 +20,6 @@ public class OrderController {
     @Autowired
     OrderMapper orderMapper;
 
-    @RequestMapping("/CreateOrder")
-    public void CreateOrder(String user_name, String type, String price, String in_date, String out_date) {
-    }
-
     @RequestMapping(value = "/GotoManageOrder")
     public String GotoManageOrder(Model model) {
         List<Order> orders = orderMapper.findAllOrder();
@@ -37,4 +33,14 @@ public class OrderController {
         return "redirect:/GotoManageOrder";
     }
 
+    @RequestMapping(value = "/GotoDetails")
+    public String GotoDetails(@Param("user_name")String user_name,
+                              @Param("type")String type,
+                              @Param("price")String price,
+                              @Param("in_date")String in_date,
+                              @Param("out_date")String out_date,
+                              Model model){
+        orderMapper.createOrder(user_name, type, price, in_date, out_date);
+        return "/";
+    }
 }
