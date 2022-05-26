@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>后台管理系统</title>
@@ -51,8 +51,14 @@
             <td th:text="${user.phone}">4</td>
             <td th:text="${user.email}">5</td>
             <td>
-                <a href="/GotoChangePage" style="background-color: grey">修改</a>
-                <a href="/DeleteUser" style="background-color: grey" th:name="${user.getName()}">删除</a>
+                <form action="/GotoChangePage">
+                    <input type="submit" th:value="修改">
+                </form>
+                <form action="/DeleteUser">
+                    <input type="hidden" th:name="${user.name}">
+                    <input type="submit" th:value="删除">
+                </form>
+
             </td>
         </tr>
     </table>
