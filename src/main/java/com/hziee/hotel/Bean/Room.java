@@ -2,8 +2,10 @@ package com.hziee.hotel.Bean;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Room {
+public class Room implements Serializable {
 	private String type;
 	private String price;
 	private String stock;

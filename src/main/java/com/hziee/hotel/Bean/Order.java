@@ -2,10 +2,11 @@ package com.hziee.hotel.Bean;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class Order {
+public class Order implements Serializable {
 	private int id;
 	private String user_name;
 	private String type;
