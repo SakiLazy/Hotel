@@ -22,7 +22,10 @@ public interface UserMapper {
     @Select("SELECT * FROM adminuser WHERE name = #{name} AND password = #{password}")
     Admin getAdminInfo(@Param("name") String name, @Param("password") String password);
 
-    @Select("select id,name,password,phone,email from user")
+//    @Select("select id,name,password,phone,email from user")
+//    List<User> findAllUser();
+
+    @Select("select * from user")
     List<User> findAllUser();
 
     @Delete("delete FROM user WHERE name=#{name}")
