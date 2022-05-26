@@ -21,14 +21,14 @@ public class OrderController {
     OrderMapper orderMapper;
 
     @RequestMapping("/CreateOrder")
-    public String CreateOrder(String user_name, String type, String price, Date in_date, Date out_date){
+    public String CreateOrder(String user_name, String type, String price, Date in_date, Date out_date) {
         return "/OrderPage";
     }
 
     @RequestMapping(value = "/GotoManageOrder")
-    public String GotoManageOrderPage(Model model){
+    public String GotoManageOrder(Model model) {
         List<Order> order = orderMapper.findAllOrder();
-        model.addAttribute("allorder",order);
+        model.addAttribute("allorder", order);
         return "/Admin/ManageOrder";
     }
 

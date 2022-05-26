@@ -1,6 +1,7 @@
 package com.hziee.hotel.Bean;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +12,9 @@ public class Order implements Serializable {
 	private String user_name;
 	private String type;
 	private String price;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date in_date;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date out_date;
 
 	public Order() {
