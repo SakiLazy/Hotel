@@ -21,7 +21,7 @@ public class OrderController {
     OrderMapper orderMapper;
 
     @RequestMapping("/CreateOrder")
-    public void CreateOrder(String user_name, String type, String price, Date in_date, Date out_date) {
+    public void CreateOrder(String user_name, String type, String price, String in_date, String out_date) {
     }
 
     @RequestMapping(value = "/GotoManageOrder")

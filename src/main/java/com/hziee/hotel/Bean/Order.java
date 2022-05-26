@@ -12,14 +12,14 @@ public class Order implements Serializable {
 	private String user_name;
 	private String type;
 	private String price;
-	private Date in_date;
-	private Date out_date;
+	private String in_date;
+	private String out_date;
 
 	public Order() {
 
 	}
 
-	public Order(int id, String user_name, String type, String price, Date in_date, Date out_date) {
+	public Order(int id, String user_name, String type, String price, String in_date, String out_date) {
 		this.id = id;
 		this.user_name = user_name;
 		this.type = type;
@@ -60,19 +60,19 @@ public class Order implements Serializable {
 		this.price = price;
 	}
 
-	public Date getIn_date() {
+	public String getIn_date() {
 		return in_date;
 	}
 
-	public void setIn_date(Date in_date) {
+	public void setIn_date(String in_date) {
 		this.in_date = in_date;
 	}
 
-	public Date getOut_date() {
+	public String getOut_date() {
 		return out_date;
 	}
 
-	public void setOut_date(Date out_date) {
+	public void setOut_date(String out_date) {
 		this.out_date = out_date;
 	}
 
@@ -83,8 +83,8 @@ public class Order implements Serializable {
 				", user_name='" + user_name + '\'' +
 				", type='" + type + '\'' +
 				", price='" + price + '\'' +
-				", in_date=" + in_date +
-				", out_date=" + out_date +
+				", in_date='" + in_date + '\'' +
+				", out_date='" + out_date + '\'' +
 				'}';
 	}
 }
