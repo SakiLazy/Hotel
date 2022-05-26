@@ -12,9 +12,7 @@ public class Order implements Serializable {
 	private String user_name;
 	private String type;
 	private String price;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date in_date;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date out_date;
 
 	public Order() {
