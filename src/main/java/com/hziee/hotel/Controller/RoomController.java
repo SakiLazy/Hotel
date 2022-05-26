@@ -2,9 +2,12 @@ package com.hziee.hotel.Controller;
 
 import com.hziee.hotel.Bean.Room;
 import com.hziee.hotel.Mapper.RoomMapper;
+import com.hziee.hotel.Service.RoomService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -14,6 +17,8 @@ public class RoomController {
 
     @Autowired
     RoomMapper roomMapper;
+    @Autowired
+    RoomService roomService;
 
     @RequestMapping(value = "/GotoManageRoom")
     public String GotoManageRoom(Model model){
@@ -22,5 +27,19 @@ public class RoomController {
         return "/Admin/ManageRoom";
     }
 
+    @RequestMapping("/changeRoomById")
+    public String changeRoomById(@Param("id")int id,
+                                 @Param("type")String type,
+                                 @Param("price")String price,
+                                 @Param("status")int status){
+        roomService.changeRoomById(id,type,price,status);
+        return "redirect:";//更改房间信息页面
+    }
+
+    @PostMapping("/roomStatus")
+    public String changeStatusById(@Param("id")int id){
+        roomService.changeStatusById(id);
+        return " ";//更改房间状态
+    }
 
 }

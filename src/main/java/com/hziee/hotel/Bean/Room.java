@@ -7,9 +7,11 @@ import java.io.Serializable;
 //房间类型
 @Data
 public class Room implements Serializable {
+	private int id;
 	private String type;
 	private String price;
 	private String stock;
+	private int status;
 
 	public Room(String type, String price, String stock) {
 		this.type = type;
