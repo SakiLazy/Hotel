@@ -4,6 +4,7 @@ import com.hziee.hotel.Bean.Admin;
 import com.hziee.hotel.Bean.User;
 import com.hziee.hotel.Mapper.UserMapper;
 import com.hziee.hotel.Service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,5 +76,13 @@ public class UserController {
         return "/Admin/ManageUsers";
     }
 
+    @RequestMapping(value = "/ChangeUserInfo")
+    public String ChangeUserInfo(@Param("name")String name,
+                                 @Param("password") String password,
+                                 @Param("phone")String phone,
+                                 @Param("email")String email){
+        userService.ChangeUserInfo(name, password, phone, email);
+        return "redirect:/GotoManageUsers";
+    }
 
 }

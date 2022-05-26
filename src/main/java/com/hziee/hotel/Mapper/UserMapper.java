@@ -3,10 +3,7 @@ package com.hziee.hotel.Mapper;
 
 import com.hziee.hotel.Bean.Admin;
 import com.hziee.hotel.Bean.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -30,4 +27,7 @@ public interface UserMapper {
 
     @Select("select * from user where id=#{id}")
     List<User> findUserByid(String id);
+
+    @Update("UPDATE user SET password=#(password),phone=#(phone),email=#(email)) WHERE name=#{name}")
+    void changeUserInfo(@Param("password") String password, @Param("phone") String phone,@Param("email")String email);
 }

@@ -23,4 +23,7 @@ public class UserService {
         return userMapper.getAdminInfo(name, password);
     }
 
+    public void ChangeUserInfo(String name, String password, String phone, String email) {
+        userMapper.saveInfo(name, password, phone, email);
+    }
 }
