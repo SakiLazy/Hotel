@@ -6,29 +6,43 @@
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
-<div style="margin-left:18%;padding:1px 16px;">
-    <h3 style="text-align: center">订单信息</h3>
-</div>
-    <form>
-        <tr>
-            <th>用户姓名</th>
-            <th>房型</th>
-            <th>房间价格</th>
-            <th>入住时间</th>
-            <th>离店时间</th>
-            <th>操作</th>
-        </tr>
-        <br>
-        <input th:text="${user_name}"/>
-        <input th:text="${type}"/>
-        <input th:text="${price}"/>
-        <input name = "in_date" id = "in_date" placeholder="入住时间">
-        <input name = "out_date" id = "out_date" placeholder="离店时间">
-        <td>
-            <form action="/CreateOrder">
-                <input type="submit" th:value="下单">
-            </form>
-        </td>
-    </form>
+<h2 style="text-align: center">
+    <span>
+        订单信息
+    </span>
+</h2>
+
+<form action="/CreateOrder">
+    <div style="padding-left:640px ">
+        用户名：<input placeholder="请输入用户名"><br><br>
+        <input type="hidden" name="user_name" th:value="${user_name}">
+        房 型：<label th:text="${type}"></label><br><br>
+        <input type="hidden" name="type" th:value="${type}">
+        价 格：<label th:text="${price}"></label><br><br>
+        <input type="hidden" name="price" th:value="${price}">
+        入住日期<input type="text" name="in_date" id="in_date" placeholder="请输入入住日期"><br><br>
+        离店日期<input type="text" name="out_date" id="out_date" placeholder="请输入离店日期"><br><br>
+        <input type="submit" th:value="下单">
+    </div>
+</form>
+
+<!--    <tr>-->
+<!--&lt;!&ndash;        <th>用户姓名</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>房型</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>房间价格</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>入住时间</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>离店时间</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>操作</th>&ndash;&gt;-->
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;    <br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input th:text="${user_name}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input th:text="${type}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input th:text="${price}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input name = "in_date" id = "in_date" placeholder="入住时间">&ndash;&gt;-->
+<!--&lt;!&ndash;    <input name = "out_date" id = "out_date" placeholder="离店时间">&ndash;&gt;-->
+<!--&lt;!&ndash;    <td>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </td>&ndash;&gt;-->
+
 </body>
 </html>

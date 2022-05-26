@@ -41,7 +41,7 @@ public class OrderController {
                               @Param("out_date")String out_date,
                               Model model){
         orderService.createOrder(user_name, type, price, in_date, out_date);
-        return "/error";
+        return "/success";
     }
 
     @RequestMapping(value = "/GotoDetails")
