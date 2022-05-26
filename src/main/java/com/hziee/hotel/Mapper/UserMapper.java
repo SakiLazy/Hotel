@@ -25,9 +25,9 @@ public interface UserMapper {
     @Select("select id,name,password,phone,email from user")
     List<User> findAllUser();
 
-    @Select("select * from user where id=#{id}")
-    List<User> findUserByid(String id);
+    @Delete("delete FROM user WHERE name=#{name}")
+    void deleteUser(String name);
 
-    @Update("UPDATE user SET password=#(password),phone=#(phone),email=#(email)) WHERE name=#{name}")
-    void changeUserInfo(@Param("password") String password, @Param("phone") String phone,@Param("email")String email,@Param("name") String name);
+    @Update("UPDATE user SET password=#{password},phone=#{phone},email=#{email} WHERE name=#{name}")
+    void changeUserInfo(@Param("name") String name,@Param("password") String password, @Param("phone") String phone,@Param("email")String email);
 }

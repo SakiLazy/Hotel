@@ -26,4 +26,8 @@ public class UserService {
     public void ChangeUserInfo(String name, String password, String phone, String email) {
         userMapper.changeUserInfo(name,password,phone,email);
     }
+
+    public void DeleteUser(String name){
+        userMapper.deleteUser(name);
+    }
 }

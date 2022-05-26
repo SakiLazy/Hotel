@@ -51,8 +51,8 @@
             <td th:text="${user.phone}">4</td>
             <td th:text="${user.email}">5</td>
             <td>
-                <button class="btn btn-sm btn-primary" th:value="${user.id}" href="/GotoChangePage">修改</button>
-                <button class="btn btn-sm btn-danger deleteBtn">删除</button>
+                <a href="/GotoChangePage" style="background-color: grey">修改</a>
+                <a href="/DeleteUser" style="background-color: grey" th:name="${user.name}">删除</a>
             </td>
         </tr>
     </table>

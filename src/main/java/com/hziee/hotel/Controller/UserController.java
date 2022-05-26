@@ -44,22 +44,6 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/GotoAdminLoginPage")
-    public String GotoAdminLoginPage(){
-        return "/AdminLogin";
-    }
-
-
-    @RequestMapping(value = "/GotoLoginPage")
-    public String GotoLoginPage() {
-        return "/Login";
-    }
-
-    @RequestMapping(value = "/GotoRegisterPage")
-    public String GotoRegisterPage() {
-        return "/Register";
-    }
-
 
     @RequestMapping(value = "/Register", method = RequestMethod.POST)
     public String Register(String name, String password, String phone, String email, Model model) {
@@ -85,4 +69,9 @@ public class UserController {
         return "redirect:/GotoManageUsers";
     }
 
+    @RequestMapping(value = "/DeleteUser")
+    public String DeleteUser(@Param("name")String name){
+        userService.DeleteUser(name);
+        return "redirect:/GotoManageUsers";
+    }
 }
