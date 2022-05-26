@@ -26,8 +26,8 @@ public interface UserMapper {
     Admin getAdminInfo(@Param("name") String name, @Param("password") String password);
 
     @Select("select id,name,password,phone,email from user")
-    public List<User> findAllUser();
+    List<User> findAllUser();
 
     @Select("select * from user where id=#{id}")
-    public List<User> findUserByid(String id);
+    List<User> findUserByid(String id);
 }

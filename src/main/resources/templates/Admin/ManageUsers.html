@@ -6,6 +6,8 @@
     <script src="/script/jquery-3.6.0.min.js"></script>
     <script src="/script/base.js"></script>
     <link href="/css/adminUI.css" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-min.css}" rel="stylesheet">
+    <script src="/script/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -40,33 +42,21 @@
             <th>用户密码</th>
             <th>用户电话</th>
             <th>用户邮箱</th>
+            <th>操作</th>
         </tr>
         <tr th:each="user:${alluser}">
-            <td><b th:text="${user.getId()}"></b></td>
-            <td><b th:text="${user.getName()}"></b></td>
-            <td><b th:text="${user.getPassword()}"></b></td>
-            <td><b th:text="${user.getPhone()}"></b></td>
-            <td><b th:text="${user.getEmail()}"></b></td>
+            <td th:text="${user.id}">1</td>
+            <td th:text="${user.name}">2</td>
+            <td th:text="${user.password}">3</td>
+            <td th:text="${user.phone}">4</td>
+            <td th:text="${user.email}">5</td>
+            <td>
+                <button class="btn btn-sm btn-primary" th:value="${user.id}" href="/GotoChangePage">修改</button>
+                <button class="btn btn-sm btn-danger deleteBtn">删除</button>
+            </td>
         </tr>
     </table>
     <br>
-    <button id="create-user" style="position: absolute; right: 40px;background-color: #aaaaaa;">修改信息</button>
-    <div id="dialog-form" title="修改信息">
-        <p class="validateTips">所有的表单字段必填！！！。</p>
-
-        <form id="updateUserform">
-            <fieldset>
-                <label for="name">名字</label>
-                <input type="text" name="userName" id="name" class="text ui-widget-content ui-corner-all">
-                <label for="password">密码</label>
-                <input type="password" name="userPwd" id="password" value="" class="text ui-widget-content ui-corner-all">
-                <label for="email">邮箱</label>
-                <input type="text" name="UserEmail" id="email" value="" class="text ui-widget-content ui-corner-all">
-                <label for="email">电话</label>
-                <input type="text" name="UserEmail" id="phone" value="" class="text ui-widget-content ui-corner-all">
-            </fieldset>
-        </form>
-    </div>
 </div>
 </body>
 </html>

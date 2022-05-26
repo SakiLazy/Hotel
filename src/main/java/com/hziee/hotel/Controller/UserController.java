@@ -68,8 +68,8 @@ public class UserController {
     }
 
     //管理用户
-    @RequestMapping(value = "/ManageUser")
-    public String ManageUser(Model model){
+    @RequestMapping(value = "/GotoManageUsers")
+    public String GotoManageUser(Model model){
         List<User> user = userMapper.findAllUser();
         model.addAttribute("alluser",user);
         return "/Admin/ManageUsers";
