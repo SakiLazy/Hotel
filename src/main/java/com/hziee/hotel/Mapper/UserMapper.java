@@ -29,5 +29,5 @@ public interface UserMapper {
     List<User> findUserByid(String id);
 
     @Update("UPDATE user SET password=#(password),phone=#(phone),email=#(email)) WHERE name=#{name}")
-    void changeUserInfo(@Param("password") String password, @Param("phone") String phone,@Param("email")String email);
+    void changeUserInfo(@Param("password") String password, @Param("phone") String phone,@Param("email")String email,@Param("name") String name);
 }

@@ -24,6 +24,6 @@ public class UserService {
     }
 
     public void ChangeUserInfo(String name, String password, String phone, String email) {
-        userMapper.saveInfo(name, password, phone, email);
+        userMapper.changeUserInfo(name,password,phone,email);
     }
 }
