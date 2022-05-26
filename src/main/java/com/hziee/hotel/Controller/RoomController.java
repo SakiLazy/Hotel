@@ -21,4 +21,6 @@ public class RoomController {
         model.addAttribute("allroom",room);
         return "/Admin/ManageRoom";
     }
+
+
 }

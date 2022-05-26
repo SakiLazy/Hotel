@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+//房间类型
 @Data
 public class Room implements Serializable {
 	private String type;
