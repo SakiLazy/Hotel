@@ -30,5 +30,6 @@ public interface OrderMapper {
                      @Param("type")String type,
                      @Param("price")String price,
                      @Param("in_date")String in_date,
-                     @Param("out_date")String out_date);
+                     @Param("out_date")String out_date,
+                     @Param("id")int id);
 }
