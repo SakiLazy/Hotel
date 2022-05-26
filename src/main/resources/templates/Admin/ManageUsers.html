@@ -1,10 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>后台管理系统</title>
+    <script src="/script/jquery-3.6.0.min.js"></script>
+    <script src="/script/base.js"></script>
+    <link href="/css/adminUI.css" rel="stylesheet">
 </head>
 <body>
 
+<div class="top">
+    <div style="float: right;font-size: 30px;padding-top: 15px">
+        <a href="/GotoAdminLoginPage">登出</a>
+    </div>
+</div>
+<ul>
+    <li id="click_1"><a href="/ManageOrder">订单管理</a></li>
+    <div class="funBackgroungColor">
+        <!--        <li id="fun1" class="hidden"><a href="/addBookPage">新建订单</a></li>-->
+        <!--        <li id="fun2" class="hidden"><a href="/addCategoryPage">新建类别</a></li>-->
+        <!--        <li id="fun2" class="hidden"><a href="/showBooksPage">查询书籍</a></li>-->
+    </div>
+    <li id="click_2"><a href="/ManageUsers">用户管理</a></li>
+    <div class="funBackgroungColor">
+        <!--        <li id="fun3" class="hidden"><a href="/showUsersPage">查询用户</a></li>-->
+        <!--        <li id="fun4" class="hidden"><a href="/addUserPage">新增用户</a></li>-->
+    </div>
+    <!--    <li id="click_3"><a href="#">订单信息</a></li>-->
+    <!--    <div class="funBackgroungColor">-->
+    <!--        <li id="fun5" class="hidden"><a href="/allBorrowBooksRecordPage?pageNum=1">所有记录</a></li>-->
+    <!--    </div>-->
+</ul>
+<div style="margin-left:18%;padding:1px 16px;">
+    <h3 style="text-align: center">个人信息</h3>
+    <table>
+        <tr>
+            <th>用户ID</th>
+            <th>用户姓名</th>
+            <th>用户密码</th>
+            <th>用户电话</th>
+            <th>用户邮箱</th>
+        </tr>
+        <tr>
+            <td><b th:text="${User.getId()}"></b></td>
+            <td><b th:text="${User.getName()}"></b></td>
+            <td><b th:text="${User.getPassword()}"></b></td>
+            <td><b th:text="${User.getPhone()}"></b></td>
+            <td><b th:text="${User.getEmail()}"></b></td>
+        </tr>
+    </table>
+    <br>
+    <button id="create-user" style="position: absolute; right: 40px;background-color: #aaaaaa;">修改信息</button>
+    <div id="dialog-form" title="修改信息">
+        <p class="validateTips">所有的表单字段必填！！！。</p>
+
+        <form id="updateUserform">
+            <fieldset>
+                <label for="name">名字</label>
+                <input type="text" name="userName" id="name" class="text ui-widget-content ui-corner-all">
+                <label for="password">密码</label>
+                <input type="password" name="userPwd" id="password" value="" class="text ui-widget-content ui-corner-all">
+                <label for="email">邮箱</label>
+                <input type="text" name="UserEmail" id="email" value="" class="text ui-widget-content ui-corner-all">
+                <label for="email">电话</label>
+                <input type="text" name="UserEmail" id="phone" value="" class="text ui-widget-content ui-corner-all">
+            </fieldset>
+        </form>
+    </div>
+</div>
 </body>
 </html>
