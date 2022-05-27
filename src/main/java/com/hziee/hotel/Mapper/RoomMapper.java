@@ -18,6 +18,9 @@ public interface RoomMapper {
     @Update("UPDATE room SET stock=#{stock} WHERE type=#{type}")
     void downStock(String type,String stock);
 
+    @Update("UPDATE room SET type=#{type},price=#{price},stock=#{stock} WHERE type=#{type}")
+    void changeRoomInfo(@Param("type")String type,@Param("price") String price,@Param("stock")String stock);
+
 //
 //    //增加新房间
 //    @Update("insert into room(id, type, price) VALUES (#{id},#{type},#{price})")

@@ -2,6 +2,7 @@ package com.hziee.hotel.Controller;
 
 import com.hziee.hotel.Bean.Room;
 import com.hziee.hotel.Mapper.RoomMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,14 @@ public class RoomController {
         List<Room> room = roomMapper.findAllRoom();
         model.addAttribute("allroom",room);
         return "/Admin/ManageRoom";
+    }
+
+    @RequestMapping(value = "/ChangeRoomInfo")
+    public String ChangeRoomInfo(@Param("type")String type,
+                                 @Param("price")String price,
+                                 @Param("stock")String stock){
+        roomMapper.changeRoomInfo(type, price, stock);
+        return "redirect:/GotoManageRoom";
     }
 //
 //    @RequestMapping("/changeRoomById")
