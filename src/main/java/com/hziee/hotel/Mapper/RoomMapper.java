@@ -3,7 +3,6 @@ package com.hziee.hotel.Mapper;
 import com.hziee.hotel.Bean.Room;
 
 import org.apache.ibatis.annotations.*;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,6 +11,13 @@ public interface RoomMapper {
 
     @Select("select type,price,stock from room")
     List<Room> findAllRoom();
+
+    @Select("select stock from room where type=#{type}")
+    String leftStock(String type);
+
+    @Update("UPDATE room SET stock=#{stock} WHERE type=#{type}")
+    void downStock(String type,String stock);
+
 //
 //    //增加新房间
 //    @Update("insert into room(id, type, price) VALUES (#{id},#{type},#{price})")

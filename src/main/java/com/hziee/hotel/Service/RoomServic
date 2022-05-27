@@ -3,7 +3,7 @@
 //import com.hziee.hotel.Mapper.RoomMapper;
 //import org.springframework.beans.factory.annotation.Autowired;
 //
-//public class RoomService {
+public class RoomService {
 //    @Autowired
 //    RoomMapper roomMapper;
 //
@@ -25,4 +25,4 @@
 //            roomMapper.roomDown(id);
 //        }
 //    }
-//}
+}

@@ -2,6 +2,7 @@ package com.hziee.hotel.Controller;
 
 import com.hziee.hotel.Bean.Order;
 import com.hziee.hotel.Mapper.OrderMapper;
+import com.hziee.hotel.Mapper.RoomMapper;
 import com.hziee.hotel.Service.OrderService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class OrderController {
 
     @Autowired
     OrderMapper orderMapper;
+
+    @Autowired
+    RoomMapper roomMapper;
 
     @RequestMapping(value = "/GotoManageOrder")
     public String GotoManageOrder(Model model) {
@@ -40,8 +44,17 @@ public class OrderController {
                               @Param("in_date")String in_date,
                               @Param("out_date")String out_date,
                               Model model){
-        orderService.createOrder(user_name, type, price, in_date, out_date);
-        return "/success";
+        if (roomMapper.leftStock(type) == "0"){
+            return "/failed";
+        }else {
+            int stock1 = Integer.parseInt(roomMapper.leftStock(type)) - 1;
+            String stock = String.valueOf(stock1);
+            roomMapper.downStock(type,stock);
+            orderService.createOrder(user_name, type, price, in_date, out_date);
+            return "/success";
+        }
+
+
     }
 
     @RequestMapping(value = "/ChangeOrderInfo")
