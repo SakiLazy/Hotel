@@ -17,17 +17,25 @@ public class RoomController {
     RoomMapper roomMapper;
 
     @RequestMapping(value = "/GotoManageRoom")
-    public String GotoManageRoom(Model model){
+    public String GotoManageRoom(Model model) {
         List<Room> room = roomMapper.findAllRoom();
-        model.addAttribute("allroom",room);
+        model.addAttribute("allroom", room);
         return "/Admin/ManageRoom";
     }
 
     @RequestMapping(value = "/ChangeRoomInfo")
-    public String ChangeRoomInfo(@Param("type")String type,
-                                 @Param("price")String price,
-                                 @Param("stock")String stock){
+    public String ChangeRoomInfo(@Param("type") String type,
+                                 @Param("price") String price,
+                                 @Param("stock") String stock) {
         roomMapper.changeRoomInfo(type, price, stock);
+        return "redirect:/GotoManageRoom";
+    }
+
+    @RequestMapping(value = "/AddRoom")
+    public String AddRoom(@Param("type") String type,
+                          @Param("price") String price,
+                          @Param("stock") String stock) {
+        roomMapper.addRoomInfo(type, price, stock);
         return "redirect:/GotoManageRoom";
     }
 //

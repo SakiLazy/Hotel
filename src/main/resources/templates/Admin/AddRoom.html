@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>增加房间</title>
+    <link rel="stylesheet" href="/css/changorder.css">
+</head>
+<body>
+<div id="lunkuo">
+    <h1>增加房间</h1><br>
+    <form action="/AddRoom"  method="post">
+        <input type="text" name="type" id="type" placeholder="请输入要增加的房间类型"><br><br>
+        <input type="tel" name="price" id="price" placeholder="请输入房间的价格" ><br><br>
+        <input type="tel" name="stock" id="stock" placeholder="请输入房间的数量" ><br><br>
+        <input type="submit" value="提交修改">
+    </form>
+    <form action="/GotoManageRoom"  method="post">
+        <br>
+        <input type="submit" value="返回">
+    </form>
+</div>
+</body>
+</html>
