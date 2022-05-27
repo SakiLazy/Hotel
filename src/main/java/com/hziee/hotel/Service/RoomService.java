@@ -1,4 +1,4 @@
-//package com.hziee.hotel.Service;
+package com.hziee.hotel.Service;
 //
 //import com.hziee.hotel.Mapper.RoomMapper;
 //import org.springframework.beans.factory.annotation.Autowired;
