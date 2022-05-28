@@ -23,6 +23,7 @@ public class RoomController {
         return "/Admin/ManageRoom";
     }
 
+    //更改房间信息
     @RequestMapping(value = "/ChangeRoomInfo")
     public String ChangeRoomInfo(@Param("type") String type,
                                  @Param("price") String price,
@@ -31,6 +32,7 @@ public class RoomController {
         return "redirect:/GotoManageRoom";
     }
 
+    //增加房间类型
     @RequestMapping(value = "/AddRoom")
     public String AddRoom(@Param("type") String type,
                           @Param("price") String price,
