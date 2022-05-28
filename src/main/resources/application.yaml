@@ -10,3 +10,7 @@ server:
   servlet:
     context-path: /
 
+logging:
+  level:
+    org.apache.catalina.core.ContainerBase: off
+
