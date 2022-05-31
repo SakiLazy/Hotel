@@ -1,5 +1,5 @@
 body{
-    background:url("/static/img/background.jpg");
+    background:url(../img/background.jpg);
 }
 #lunkuo{
     position: absolute;

@@ -1,5 +1,5 @@
 body{
-    background:url("/static/img/background.jpg");
+    background:url(../img/background.jpg);
 }
 html {
     font-size: 10px;
